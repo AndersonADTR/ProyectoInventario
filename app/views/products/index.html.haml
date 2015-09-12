@@ -1,0 +1,29 @@
+%h1 Listado de Productos
+
+.table-responsive
+  %table.table
+    %thead
+      %tr
+        %th Codigo 
+        %th Nombre
+        %th Cantidad
+        %th Imagen
+        %th Descripcion
+        %th Precio
+      
+    %tbody
+      - @products.each do |product|
+        %tr{ class: "#{product.quantity <= 50 ? 'danger' : 'success'}" }
+          %td= product.cod
+          %td= product.name
+          %td= product.quantity
+          %td= product.image
+          %td= product.description
+          %td= product.price
+          %td= link_to 'Mostrar', product
+          %td= link_to 'Editar', edit_product_path(product)
+          %td= link_to 'Eliminar', product, :method => :delete, :data => { :confirm => '¿Estas seguro?' }
+
+  %br
+
+  = link_to 'Nuevo Producto', new_product_path

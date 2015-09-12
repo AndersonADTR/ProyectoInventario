@@ -1,0 +1,12 @@
+=	simple_form_for(@product)	do|f|
+	=	f.error_notification
+
+	.form-inputs
+		= f.input :cod, label: "Codigo"
+		= f.input :name, label: "Nombre"
+		= f.input :quantity, label: "Cantidad", hint: "Mantener mas de 50 en stock...", as: :float
+		= f.input :image, label: "Imagen", as: :file
+		= f.input :description, label: "Descripcion", as: :text
+		= f.input :price, label: "Precio"
+	.form-actions
+		= f.button :submit

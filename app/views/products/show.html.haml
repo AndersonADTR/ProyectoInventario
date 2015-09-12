@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Codigo:
+  = @product.cod
+%p
+  %b Nombre:
+  = @product.name
+%p
+  %b Cantidad:
+  = @product.quantity
+%p
+  %b Imagen:
+  = @product.image
+%p
+  %b Descripcion:
+  = @product.description
+%p
+  %b Precio:
+  = @product.price
+
+= link_to 'Editar', edit_product_path(@product)
+\|
+= link_to 'Atras', products_path
